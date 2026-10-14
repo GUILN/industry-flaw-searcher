@@ -11,20 +11,14 @@
             "id": "f6f5cf5e35e490f1",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "project/Board.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "design/Macro Architecture V2.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "Board"
+              "icon": "lucide-file",
+              "title": "Macro Architecture V2"
             }
           }
         ]
@@ -105,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project/Board.md",
+                "file": "design/Macro Architecture V2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "project/Board.md",
+                "file": "design/Macro Architecture V2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -167,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "project/Board.md",
+                "file": "design/Macro Architecture V2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -197,9 +191,13 @@
   },
   "active": "f6f5cf5e35e490f1",
   "lastOpenFiles": [
+    "design/Web UI CMS Admin.md",
+    "design/Macro Architecture V2.md",
     "README.md",
+    "project/Information/Reclame Aqui.md",
     "project/Board.md",
-    "project/Board.md",
+    "design",
+    "project/Information",
     "project"
   ]
 }
