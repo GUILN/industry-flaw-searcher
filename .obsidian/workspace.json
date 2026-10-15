@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "design/Macro Architecture V3 — Monolith.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Macro Architecture V3 — Monolith"
+              "title": "README"
             }
           }
         ]
@@ -191,8 +191,9 @@
   },
   "active": "f6f5cf5e35e490f1",
   "lastOpenFiles": [
-    "design/Macro Architecture V2.md",
+    "design/Macro Architecture V3.1.md",
     "design/Macro Architecture V3 — Monolith.md",
+    "design/Macro Architecture V2.md",
     "design/Web UI CMS Admin.md",
     "README.md",
     "project/Information/Reclame Aqui.md",

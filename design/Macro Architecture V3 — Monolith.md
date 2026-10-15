@@ -1,3 +1,8 @@
+- Version: 3
+- Change log: Change main approach from microservices to monolith
+- Reason of change: Reduce initial complexity + reduce deployment costs + reduce network hops (latency)
+- Author: #gui
+
 ```mermaid
 flowchart TB
 
@@ -11,7 +16,7 @@ workerN["Scrape Worker n"]
 
 end
 
-subgraph apiMonolith["API Server Deployment<br>&lt;&lt; HTTP Adapters &gt;&gt;"]
+subgraph apiMonolith["API Monolith"]
 
 adminPanel["Admin HTTP API<br>&lt;Presentation Module&gt;"]
 
@@ -87,4 +92,5 @@ storageNote@{ shape: brace-r}
 
 dbSchemaNote@{ shape: brace-r}
 ```
+
 
