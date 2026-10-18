@@ -1,4 +1,3 @@
-# AGENTS.md
 
 ## Project Overview
 
@@ -31,6 +30,7 @@ fits well — and it's already what your commit/PR skills expect (`username/OAU-
 - **Prefix words like `feature/`, `bugfix/` are optional** in the `username/` style; they add little once the ticket type is in Jira. Pick one style and stick to it.
 - **Lowercase, hyphen-separated** — avoids OS/case-sensitivity headaches.
 - Since you're about to branch-protect `main`, having usernames in branch names also makes it obvious who owns in-flight work and prevents branch-name collisions on push.
+- **Enforced by CI** — the [branch-name-check](./.github/workflows/branch-name-check.yml) workflow fails any PR to `main` whose head branch doesn't match `username/[module-]TICKET-description`.
 ## Tech Direction
 
 - This is a monorepo, each repo has it's own tech stack, deployment and directives
