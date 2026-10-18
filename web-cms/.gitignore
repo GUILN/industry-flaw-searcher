@@ -1,0 +1,26 @@
+# ============================================================
+# web-cms module ignores (React + Vite + TypeScript + Jest).
+# Cross-cutting ignores (OS files, secrets, editors) live in
+# the repository root .gitignore.
+# ============================================================
+
+# --- Dependencies ---
+node_modules/
+
+# --- Build output (Vite) ---
+dist/
+dist-ssr/
+.vite/
+
+# --- Test & coverage (Jest) ---
+coverage/
+
+# --- Caches ---
+.eslintcache
+*.tsbuildinfo
+
+# --- Local env overrides (base .env rules live in root .gitignore) ---
+*.local
+
+# Note: package-lock.json / yarn.lock / pnpm-lock.yaml are
+# intentionally NOT ignored — always commit lockfiles.
