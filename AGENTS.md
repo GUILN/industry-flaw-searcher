@@ -17,21 +17,27 @@ This repository follows a mono-repo / multi deployment approach, where each modu
 
 ### Making Changes
 
-Given your setup (monorepo, Jira-style tickets, PR-based flow coming), a convention like:
+Branches must be named:
 
 ```
-<username>/<TICKET>-<short-description>
+<username>/[<module>-]<TICKET>-<short-description>
 ```
 
-e.g. `guiln/OAU-12345-add-rate-limiting`
+Where `<TICKET>` is either a GitHub issue reference (`gh-<number>`, this repo's tracker) or a Jira-style key (`<KEY>-<number>`):
 
-fits well — and it's already what your commit/PR skills expect (`username/OAU-999-quick`). A few notes:
+- `guiln/gh-4-update-readme`
+- `guiln/OAU-12345-add-rate-limiting`
+- `guiln/api-OAU-123-rate-limiting`
+
+A few notes:
 
 - **Include the module prefix for monorepo clarity**, e.g. `guiln/api-OAU-123-rate-limiting` — with multiple deployable modules in one repo, the branch itself tells reviewers where the change lives.
-- **Prefix words like `feature/`, `bugfix/` are optional** in the `username/` style; they add little once the ticket type is in Jira. Pick one style and stick to it.
-- **Lowercase, hyphen-separated** — avoids OS/case-sensitivity headaches.
-- Since you're about to branch-protect `main`, having usernames in branch names also makes it obvious who owns in-flight work and prevents branch-name collisions on push.
-- **Enforced by CI** — the [branch-name-check](./.github/workflows/branch-name-check.yml) workflow fails any PR to `main` whose head branch doesn't match `username/[module-]TICKET-description`.
+- **Prefix words like `feature/`, `bugfix/` are optional** in the `username/` style; they add little once the ticket type is known. Pick one style and stick to it.
+- **Lowercase, hyphen-separated** — avoids OS/case-sensitivity headaches. The ticket key itself stays uppercase (`OAU-123`), issue refs stay `gh-4`.
+- Having usernames in branch names makes it obvious who owns in-flight work and prevents branch-name collisions on push.
+- **Enforced by CI** — the [branch-name-check](./.github/workflows/branch-name-check.yml) workflow fails any PR to `main` whose head branch doesn't match the convention.
+
+`main` is branch-protected: no direct pushes (admins included), no force pushes, no deletions — every change lands through a pull request.
 ## Tech Direction
 
 - This is a monorepo, each repo has it's own tech stack, deployment and directives
