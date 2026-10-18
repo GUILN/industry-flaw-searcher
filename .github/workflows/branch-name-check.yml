@@ -1,0 +1,28 @@
+name: Repo guards
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  branch-name:
+    name: Branch name convention
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate branch name
+        env:
+          BRANCH: ${{ github.head_ref }}
+        run: |
+          # Convention: username/[module-]TICKET-description
+          # e.g. guiln/OAU-12345-add-rate-limiting
+          #      guiln/api-OAU-123-rate-limiting
+          pattern='^[a-z0-9-]+/[a-z0-9-]*[A-Z]+-[0-9]+(-[a-z0-9-]+)*$'
+          if [[ "$BRANCH" =~ $pattern ]]; then
+            echo "OK: '$BRANCH' matches the branch naming convention."
+          else
+            echo "::error::Branch '$BRANCH' violates the naming convention. Expected username/[module-]TICKET-short-description (e.g. guiln/api-OAU-123-rate-limiting). See AGENTS.md 'Making Changes'."
+            exit 1
+          fi
