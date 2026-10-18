@@ -1,0 +1,40 @@
+# ============================================================
+# Python API module ignores.
+# Cross-cutting ignores (OS files, secrets, editors) live in
+# the repository root .gitignore.
+# ============================================================
+
+# --- Byte-compiled / optimized / DLL files ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# --- Virtual environments ---
+.venv/
+venv/
+ENV/
+
+# --- Packaging / distribution ---
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# --- Test & coverage caches ---
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# --- Type checkers & linters ---
+.mypy_cache/
+.pytype/
+.ruff_cache/
+
+# --- Notebooks ---
+.ipynb_checkpoints/

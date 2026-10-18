@@ -1,0 +1,32 @@
+# ============================================================
+# Root .gitignore — cross-cutting ignores only.
+# Stack/language-specific patterns belong in each module's
+# own .gitignore (e.g. api/.gitignore for the Python API).
+# ============================================================
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editors / IDEs ---
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# --- Secrets & local env (never per-module: one rule to rule them all) ---
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.p12
+credentials.json
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Personal tooling ---
+.obsidian/
