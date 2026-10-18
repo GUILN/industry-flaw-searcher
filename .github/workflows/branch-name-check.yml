@@ -17,12 +17,14 @@ jobs:
           BRANCH: ${{ github.head_ref }}
         run: |
           # Convention: username/[module-]TICKET-description
-          # e.g. guiln/OAU-12345-add-rate-limiting
+          # TICKET is a GitHub issue ref (gh-4) or a Jira-style key (OAU-123).
+          # e.g. guiln/gh-4-update-readme
+          #      guiln/OAU-12345-add-rate-limiting
           #      guiln/api-OAU-123-rate-limiting
-          pattern='^[a-z0-9-]+/[a-z0-9-]*[A-Z]+-[0-9]+(-[a-z0-9-]+)*$'
+          pattern='^[a-z0-9-]+/([a-z0-9-]*[A-Z]+|[a-z0-9-]*gh)-[0-9]+(-[a-z0-9-]+)*$'
           if [[ "$BRANCH" =~ $pattern ]]; then
             echo "OK: '$BRANCH' matches the branch naming convention."
           else
-            echo "::error::Branch '$BRANCH' violates the naming convention. Expected username/[module-]TICKET-short-description (e.g. guiln/api-OAU-123-rate-limiting). See AGENTS.md 'Making Changes'."
+            echo "::error::Branch '$BRANCH' violates the naming convention. Expected username/[module-]TICKET-short-description, where TICKET is a GitHub issue ref (gh-4) or a Jira-style key (OAU-123). Examples: guiln/gh-4-update-readme, guiln/api-OAU-123-rate-limiting. See AGENTS.md 'Making Changes'."
             exit 1
           fi
