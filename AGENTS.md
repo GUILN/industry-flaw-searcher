@@ -13,6 +13,7 @@ This repository follows a mono-repo / multi deployment approach, where each modu
 
 ### Repos
 - [API](./api) — API Monolith described in [design folder](./design) latest `Macro Architecture` document.
+- [web-cms](./web-cms) — `Web UI  <Dashboard>` component described in [design folder](./design) latest `Macro Architecture` document.
 
 ### Making Changes
 
